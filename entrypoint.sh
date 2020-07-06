@@ -4,9 +4,9 @@ set -e
 
 FOLDER=$1
 GITHUB_USERNAME=$2
-#STARTER_NAME="${3:-name}"
+STARTER_NAME="${3:-name}"
 BASE=$(pwd)
-CLONE_DIR="__${STARTER_NAME}__clone__"
+CLONE_DIR="__${$STARTER_NAME}__clone__"
 
 git clone --depth 1 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$STARTER_NAME.git $CLONE_DIR &> /dev/null
 cd $CLONE_DIR
