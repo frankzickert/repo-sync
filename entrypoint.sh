@@ -16,7 +16,7 @@ echo "Using $STARTER_NAME as the package.json key"
 # sync to read-only clones
 for folder in $FOLDER/*; do
   echo "copy $folder"
-  [[ $a == i_* ]] || continue # skip the internal folders
+  [[ $folder == i_* ]] || continue # skip the internal folders
   [ -d "$folder" ] || continue # only directories
   cd $BASE
 
