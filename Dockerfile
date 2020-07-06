@@ -1,7 +1,7 @@
 FROM node:12-slim
 
-LABEL repository="https://github.com/locked-graphql/RepoSync.git"
-LABEL homepage="https://github.com/locked-graphql/RepoSync.git"
+LABEL repository="https://github.com/locked-graphql/repo-sync.git"
+LABEL homepage="https://github.com/locked-graphql/repo-sync.git"
 LABEL maintainer="Dr. Frank Zickert"
 
 LABEL com.github.actions.name="GitHub Action to keep the public repo in sync"
