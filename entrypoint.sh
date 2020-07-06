@@ -6,7 +6,7 @@ FOLDER=$1
 GITHUB_USERNAME=$2
 STARTER_NAME="${3:-name}"
 BASE=$(pwd)
-CLONE_DIR="__${$STARTER_NAME}__clone__"
+CLONE_DIR="__${STARTER_NAME}__clone__"
 
 git clone --depth 1 https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$STARTER_NAME.git $CLONE_DIR &> /dev/null
 cd $CLONE_DIR
@@ -23,6 +23,7 @@ echo "Using $STARTER_NAME as the repo name"
 for folder in $FOLDER/*; do
   echo "check $folder"
   [[ $folder != */i_* ]] || continue # skip the internal folders
+  [[ $folder == */.github* ]] || continue # skip the github folders
   #[ -d "$folder" ] || continue # only directories
   cd $BASE
 
