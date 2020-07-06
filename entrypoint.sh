@@ -27,12 +27,12 @@ cd $BASE
 # sync to read-only clones
 for folder in *; do
   echo "check $folder"
-  [[ $folder != */i_* ]] || continue # skip the internal folders
-  [[ $folder == */.github* ]] || continue # skip the github folders
+  [[ $folder != i_* ]] || continue # skip the internal folders
+  [[ $folder != */.github* ]] || continue # skip the github folders
   #[ -d "$folder" ] || continue # only directories
   cd $BASE
 
-  echo "$folder"
+  echo "copy $folder"
 
   #NAME=$(cat $folder/package.json | jq --arg name "$STARTER_NAME" -r '.[$name]')
   #echo "  Name: $NAME"
