@@ -2,9 +2,9 @@
 
 set -e
 
-FOLDER=$1
-GITHUB_USERNAME=$2
-STARTER_NAME="${3:-name}"
+
+GITHUB_USERNAME=$1
+STARTER_NAME="${2:-name}"
 BASE=$(pwd)
 CLONE_DIR="__${STARTER_NAME}__clone__"
 
@@ -16,7 +16,7 @@ find . | grep -v ".git" | grep -v "^\.*$" | xargs rm -rf # delete all files (to 
 git config --global user.email "fzickert@googlemail.com"
 git config --global user.name "$GITHUB_USERNAME"
 
-echo "Cloning folders in $FOLDER and pushing to $GITHUB_USERNAME"
+echo "Cloning folders and pushing to $GITHUB_USERNAME"
 echo "Using $STARTER_NAME as the repo name"
 
 # sync to read-only clones
