@@ -29,6 +29,7 @@ for folder in *; do
   echo "check $folder"
   [[ $folder != i_* ]] || continue # skip the internal folders
   [[ $folder != */.github* ]] || continue # skip the github folders
+  [[ $folder != $CLONE_DIR ]] || continue # skip the clone folder
   #[ -d "$folder" ] || continue # only directories
   cd $BASE
 
@@ -52,23 +53,16 @@ for folder in *; do
     cp $BASE/$folder .
   fi
 
-  # generate a new yarn.lock file based on package-lock.json unless you're in a workspace
-  #if [ "$IS_WORKSPACE" = null ]; then
-  #  echo "  Regenerating yarn.lock"
-  #  rm -rf yarn.lock
-  #  yarn
-  #fi
-
-  # Commit if there is anything to
-  if [ -n "$(git status --porcelain)" ]; then
-    echo  "  Committing $STARTER_NAME to $GITHUB_REPOSITORY"
-    git add .
-    git commit --message "Update $STARTER_NAME from $GITHUB_REPOSITORY"
-    git push origin master
-    echo  "  Completed $STARTER_NAME"
-  else
-    echo "  No changes, skipping $STARTER_NAME"
-  fi
-
-  cd $BASE
 done
+
+
+# Commit if there is anything to
+if [ -n "$(git status --porcelain)" ]; then
+  echo  "  Committing $STARTER_NAME to $GITHUB_REPOSITORY"
+  git add .
+  git commit --message "Update $STARTER_NAME from $GITHUB_REPOSITORY"
+  git push origin master
+  echo  "  Completed $STARTER_NAME"
+else
+  echo "  No changes, skipping $STARTER_NAME"
+fi
