@@ -45,7 +45,7 @@ for folder in *; do
   # this handles file deletions, additions, and changes seamlessly
   cd $CLONE_DIR
 
-  if [ -d "$folder" ]; then
+  if [ -d "$BASE/$folder/" ]; then
     echo "copy folder $BASE/$folder/"
     cp -r $BASE/$folder/ .
   else
