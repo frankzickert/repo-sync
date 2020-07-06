@@ -20,7 +20,7 @@ echo "Cloning folders in $FOLDER and pushing to $GITHUB_USERNAME"
 echo "Using $STARTER_NAME as the repo name"
 
 # sync to read-only clones
-for folder in $FOLDER/*; do
+for folder in *; do
   echo "check $folder"
   [[ $folder != */i_* ]] || continue # skip the internal folders
   [[ $folder == */.github* ]] || continue # skip the github folders
