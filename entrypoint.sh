@@ -19,6 +19,8 @@ git config --global user.name "$GITHUB_USERNAME"
 echo "Cloning folders and pushing to $GITHUB_USERNAME"
 echo "Using $STARTER_NAME as the repo name"
 
+cd $BASE
+
 # sync to read-only clones
 for folder in *; do
   echo "check $folder"
