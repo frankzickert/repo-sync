@@ -60,7 +60,7 @@ done
 if [ -n "$(git status --porcelain)" ]; then
   echo  "  Committing $STARTER_NAME to $GITHUB_REPOSITORY"
   git add .
-  git commit --message "Update $STARTER_NAME from $GITHUB_REPOSITORY"
+  git commit --message "Update $STARTER_NAME"
   git push origin master
   echo  "  Completed $STARTER_NAME"
 else
