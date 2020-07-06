@@ -7,7 +7,7 @@ GITHUB_USERNAME=$1
 STARTER_NAME="${2:-name}"
 BASE=$(pwd)
 CLONE_DIR="__${STARTER_NAME}__clone__"
-REPO = https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$STARTER_NAME.git
+REPO=https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$STARTER_NAME.git
 
 git config --global user.email "fzickert@googlemail.com"
 git config --global user.name "$GITHUB_USERNAME"
