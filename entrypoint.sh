@@ -24,7 +24,7 @@ find . | grep -v ".git" | grep -v "^\.*$" | xargs rm -rf # delete all files (to 
 
 cd $BASE
 
-folder = $3
+folder=$3
 # sync to read-only clones
 #for folder in *; do
   echo "check $folder"
