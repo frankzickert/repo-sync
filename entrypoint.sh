@@ -5,6 +5,7 @@ set -e
 
 GITHUB_USERNAME=$1
 STARTER_NAME="${2:-name}"
+
 BASE=$(pwd)
 CLONE_DIR="__${STARTER_NAME}__clone__"
 REPO=https://$API_TOKEN_GITHUB@github.com/$GITHUB_USERNAME/$STARTER_NAME.git
@@ -23,9 +24,9 @@ find . | grep -v ".git" | grep -v "^\.*$" | xargs rm -rf # delete all files (to 
 
 cd $BASE
 
-
+folder = $3
 # sync to read-only clones
-for folder in *; do
+#for folder in *; do
   echo "check $folder"
   [[ $folder != i_* ]] || continue # skip the internal folders
   [[ $folder != */.github* ]] || continue # skip the github folders
@@ -53,7 +54,7 @@ for folder in *; do
     cp $BASE/$folder .
   fi
 
-done
+#done
 
 
 # Commit if there is anything to
