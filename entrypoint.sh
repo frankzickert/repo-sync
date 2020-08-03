@@ -24,9 +24,9 @@ find . | grep -v ".git" | grep -v "^\.*$" | xargs rm -rf # delete all files (to 
 
 cd $BASE
 
-folder=$3
+
 # sync to read-only clones
-#for folder in *; do
+for folder in $3; do
   echo "check $folder"
   [[ $folder != i_* ]] || continue # skip the internal folders
   [[ $folder != */.github* ]] || continue # skip the github folders
@@ -54,7 +54,7 @@ folder=$3
     cp $BASE/$folder .
   fi
 
-#done
+done
 
 
 # Commit if there is anything to
