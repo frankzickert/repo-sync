@@ -26,7 +26,7 @@ cd $BASE
 
 
 # sync to read-only clones
-for folder in $3; do
+for folder in $3/*; do
   echo "check $folder"
   [[ $folder != i_* ]] || continue # skip the internal folders
   [[ $folder != */.github* ]] || continue # skip the github folders
